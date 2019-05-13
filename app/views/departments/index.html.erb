@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<h1>Departments</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @departments.each do |department| %>
+      <tr>
+        <td><%= department.name %></td>
+        <td><%= link_to 'Show', department %></td>
+        <td><%= link_to 'Edit', edit_department_path(department) %></td>
+        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="row justify-content-md-center">
+    <a href="<%= new_department_path %>" class="btn btn-primary" role="button">New Department</a>
+  </div>
+<%= will_paginate @departments, renderer: BootstrapPagination::Rails%>
+
+<%= link_to 'Back to employees', employees_path %>
+</div>

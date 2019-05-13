@@ -1,0 +1,10 @@
+<h3>Search Result</h3>
+    <% @results.each do |result| %>
+        <%= result.name %><br>
+    <% end %>
+
+#Code to add
+<h3>Search Result</h3>
+    <% @results.each do |result| %>
+        <%= result.store.name %> <%= result.name %><br>
+    <% end %>

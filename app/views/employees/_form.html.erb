@@ -1,0 +1,11 @@
+<div class="container">
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= f.input :name %>
+    <%= f.association :department %>
+    <%= f.input :active%>
+
+    <%= f.button :submit, class: "btn-primary" %>
+<% end %>
+</div>
